@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-spectra-bg: #050505;
+  --color-spectra-panel: #111111;
+  --color-spectra-border: #222222;
+  --color-spectra-magenta: #ff00ff;
+  --color-spectra-green: #39ff14;
+  --color-spectra-cyan: #00ffff;
+  --color-spectra-text: #a0a0a0;
+  
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-spectra-bg text-spectra-text font-mono overflow-hidden select-none;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-spectra-bg;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-spectra-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-spectra-text;
+  }
+}
+
+@layer utilities {
+  .glow-magenta {
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.8);
+  }
+  .glow-green {
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.8);
+  }
+  .glow-cyan {
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+  }
+  .box-glow-magenta {
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3), inset 0 0 10px rgba(255, 0, 255, 0.1);
+  }
+  .box-glow-green {
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3), inset 0 0 10px rgba(57, 255, 20, 0.1);
+  }
+  .scanline {
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+    background-size: 100% 4px;
+  }
+}
